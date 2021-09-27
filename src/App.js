@@ -20,7 +20,7 @@ const App = () => {
     const newTasks = todoList.filter((task) => task.id !== id);
     setTodoList(newTasks);
   };
-  
+
   //Todo:::LocalStorage
   useEffect(() => {
     if (initialTasks) {
@@ -28,7 +28,7 @@ const App = () => {
     } else {
       localStorage.setItem('todoList', JSON.stringify([]));
     }
-  }, [todoList]);
+  }, [todoList, initialTasks]);
 
   return (
     <div className="bg-dark">

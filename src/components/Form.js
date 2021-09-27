@@ -15,7 +15,7 @@ const Form = ({ createTask }) => {
   };
 
   //*extract values from state
-  const { task, status } = taskList;
+  const { task } = taskList;
 
   const handleSubmit = (e) => {
     e.preventDefault();
