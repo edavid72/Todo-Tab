@@ -3,14 +3,13 @@ import MsgError from './MsgError';
 import { v4 as uuidv4 } from 'uuid';
 
 const Form = ({ createTask }) => {
-  const [taskList, setTaskList] = useState({ task: '', status: false });
+  const [taskList, setTaskList] = useState({ task: '' });
   const [error, setError] = useState(false);
 
   const handleChangeInput = (e) => {
     setTaskList({
       ...taskList,
       [e.target.name]: e.target.value,
-      status: false,
     });
   };
 
@@ -29,7 +28,7 @@ const Form = ({ createTask }) => {
 
     //! Add a ID
     taskList.id = uuidv4();
-    console.log();
+    taskList.status = false;
 
     //!Create the task
 

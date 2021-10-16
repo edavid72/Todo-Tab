@@ -1,7 +1,10 @@
 import React from 'react';
 
-const ToDoList = ({ todoList, deleteTask }) => {
-  console.log(todoList.length);
+const ToDoList = ({ todoList, deleteTask, setTodoList }) => {
+ /*  console.log(todoList.length); */
+
+  const style01 =
+    'text-navy text-xl tablet:text-3xl laptop:text-2xl cursor-pointer';
 
   return (
     <>
@@ -13,9 +16,8 @@ const ToDoList = ({ todoList, deleteTask }) => {
               className="flex justify-between border-b-2 border-darkgrey mb-2 p-1"
             >
               <div className="flex items-center">
-                <p className="text-navy text-xl tablet:text-3xl laptop:text-2xl cursor-pointer">
-                  {task.task}
-                </p>
+                <p className={style01}>{task.task}</p>
+                <p>{task.status}</p>
               </div>
 
               <button
